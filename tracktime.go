@@ -59,16 +59,12 @@ func main() {
             TimeWork = TimeWork + 1 
         }
 
-        // else {
-        //     log.Printf("Idle for %d seconds.", int(idleTime.Seconds()))
-        // }
-
         if TimeWork >= 300 {
             go pingBackend(TimeWork)
             TotalTime += TimeWork
             TimeWork = 0
         }
-        //fmt.Println("ping")
+
         time.Sleep(1 * time.Second)
     }
 
